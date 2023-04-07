@@ -7,7 +7,7 @@ exports.index = (req, res) => {
 exports.register = async (req, res) => {
     try {
         const contato = new Contato(req.body)
-        await contato.register()
+        await contato.register(res.locals.user)
         
         if(contato.errors.length > 0) {
             req.flash('errors', contato.errors)
