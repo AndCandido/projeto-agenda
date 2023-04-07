@@ -34,9 +34,17 @@ export default class Contato {
             error = true
             alert('O campo nome está vazio')
         }
+        if(!sobrenomeInput.value) {
+            error = true
+            alert('O campo sobrenome está vazio')
+        }
         if(nomeInput.value.length > 40) {
             error = true
-            alert('O máximo de caracteres permitidos no campo nome é 40')
+            alert('O máximo de caracteres permitidos no campo nome são 40')
+        }
+        if(sobrenomeInput.value.length > 100) {
+            error = true
+            alert('O máximo de caracteres permitidos no campo sobrenome são 100')
         }
         if(!emailInput.value && !telefoneInput.value) {
             error = true
